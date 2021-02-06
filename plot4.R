@@ -23,7 +23,7 @@ with(electric,plot(Time, Global_active_power,type="l",ylab= "Global Active Power
 plot(electric$Time,electric$Sub_metering_1, type="l", ylab="Energy sub metering", xlab=character(0))
 lines(electric$Time,electric$Sub_metering_2, col="red")
 lines(electric$Time,electric$Sub_metering_3, col="blue")
-legend("topright", inset=c(.05,.005), lty=rep(1,3), col=c("black", "red", "blue"), box.lty=0, legend=names(electric)[7:9])
+legend("topright", inset=c(.1,.002), lty=rep(1,3), col=c("black", "red", "blue"), box.lty=0, y.intersp=0.5, legend=names(electric)[7:9])
 
 with(electric,plot(Time, Voltage,type="l", xlab="datetime"))
 

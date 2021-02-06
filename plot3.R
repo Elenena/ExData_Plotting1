@@ -19,7 +19,7 @@ dev.off() #to reset par() skip this line if you don't have any graphic device op
 plot(electric$Time,electric$Sub_metering_1, type="l", ylab="Energy sub metering", xlab=character(0))
 lines(electric$Time,electric$Sub_metering_2, col="red")
 lines(electric$Time,electric$Sub_metering_3, col="blue")
-legend("topright", lty=rep(1,3), col=c("black", "red", "blue"), legend=paste(names(electric)[7:9]," "))
+legend("topright", lty=rep(1,3), col=c("black", "red", "blue"), legend=paste(names(electric)[7:9],"     "))
 
 dev.copy(png,"plot3.png")
 dev.off()
