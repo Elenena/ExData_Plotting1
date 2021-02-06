@@ -15,8 +15,10 @@ electric<-filter(electric, (Date>=ymd("2007-02-01")&Date<=ymd("2007-02-02")))
 electric[,3:9]<-sapply(electric[,3:9],as.numeric)
 
 #plot1
-dev.off() #to reset par()
+dev.off() #to reset par() skip this line if you don't have any graphic device open
+
 hist(electric$Global_active_power, col="red", xlab="Global Active Power (kilowatts)",main="Global Active Power")
+
 dev.copy(png,"plot1.png")
 dev.off()
 

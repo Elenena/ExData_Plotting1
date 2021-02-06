@@ -15,15 +15,15 @@ electric<-filter(electric, (Date>=ymd("2007-02-01")&Date<=ymd("2007-02-02")))
 electric[,3:9]<-sapply(electric[,3:9],as.numeric)
 
 #plot4
-dev.off() #to reset par()
-par(mfcol=c(2,2), mar=c(4,4,2,2))
+dev.off() #to reset par() skip this line if you don't have any graphic device open
+par(mfcol=c(2,2), mar=c(4,4,4,2))
 
 with(electric,plot(Time, Global_active_power,type="l",ylab= "Global Active Power (kilowatts)", xlab=character(0)))
 
 plot(electric$Time,electric$Sub_metering_1, type="l", ylab="Energy sub metering", xlab=character(0))
 lines(electric$Time,electric$Sub_metering_2, col="red")
 lines(electric$Time,electric$Sub_metering_3, col="blue")
-legend("topright", lty=rep(1,3), col=c("black", "red", "blue"), box.lty=0, legend=names(electric)[7:9])
+legend("topright", inset=c(.05,.005), lty=rep(1,3), col=c("black", "red", "blue"), box.lty=0, legend=names(electric)[7:9])
 
 with(electric,plot(Time, Voltage,type="l", xlab="datetime"))
 

@@ -15,8 +15,10 @@ electric<-filter(electric, (Date>=ymd("2007-02-01")&Date<=ymd("2007-02-02")))
 electric[,3:9]<-sapply(electric[,3:9],as.numeric)
 
 #plot2
-dev.off() #to reset par()
+dev.off() #to reset par() skip this line if you don't have any graphic device open
 par(mar=c(3,4,4,2))
+
 with(electric,plot(Time, Global_active_power,type="l",ylab= "Global Active Power (kilowatts)"))
+
 dev.copy(png,"plot2.png")
 dev.off()
